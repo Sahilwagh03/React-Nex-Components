@@ -1,21 +1,21 @@
-let alertClasses = `rounded-md px-4 py-2 shadow-md w-[300px] h-auto `; // Base styles with padding, width, height
+let alertClasses = ` `
 
 export const getAlertTypeStyle = (type) => {
     switch (type) {
         case 'info':
-            alertClasses += 'bg-blue-100 text-black ';
+            alertClasses = 'bg-blue-100 text-black ';
             return alertClasses
         case 'success':
-            alertClasses += 'bg-green-100 text-black ';
+            alertClasses = 'bg-green-100 text-black ';
             return alertClasses
         case 'error':
-            alertClasses += 'bg-red-100 text-black ';
+            alertClasses = 'bg-red-100 text-black ';
             return alertClasses
         case 'warning':
-            alertClasses += 'bg-yellow-100 text-black ';
+            alertClasses = 'bg-yellow-100 text-black ';
             return alertClasses
         default:
-            alertClasses += 'bg-white border-1 border-[#61DAFB] ';
+            alertClasses = 'bg-white border-1 border-[#61DAFB] ';
             return alertClasses
     }
 }

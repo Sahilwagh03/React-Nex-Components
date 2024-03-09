@@ -13,7 +13,7 @@ const Alert = ({
 
   return (
     <div
-      className={classNames(getAlertTypeStyle(type) ,alertContainerStyle, getPositionClasses(position) , 'absolute')}
+      className={classNames('rounded-md px-4 py-2 shadow-md w-[300px] h-auto',getAlertTypeStyle(type) ,alertContainerStyle, getPositionClasses(position) , 'absolute')}
     > {/* Apply base classes, prop style, absolute positioning, and position classes */}
       {title && <h3 className={`font-bold ${titleStyle}`}>{title}</h3>}
       <p className={`text-sm ${messageStyle}`}>{message}</p>
