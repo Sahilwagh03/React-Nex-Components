@@ -4,21 +4,20 @@ export const getAlertTypeStyle = (type) => {
     switch (type) {
         case 'info':
             alertClasses += 'bg-blue-100 text-black ';
-            break;
+            return alertClasses
         case 'success':
-            alertClasses += 'bg-green-100 text-black';
-            break;
+            alertClasses += 'bg-green-100 text-black ';
+            return alertClasses
         case 'error':
-            alertClasses += 'bg-red-100 text-black';
-            break;
+            alertClasses += 'bg-red-100 text-black ';
+            return alertClasses
         case 'warning':
-            alertClasses += 'bg-yellow-100 text-black';
-            break;
+            alertClasses += 'bg-yellow-100 text-black ';
+            return alertClasses
         default:
-            alertClasses += 'bg-white border-1 border-[#61DAFB]';
-            break;
+            alertClasses += 'bg-white border-1 border-[#61DAFB] ';
+            return alertClasses
     }
-    return alertClasses
 }
 
 

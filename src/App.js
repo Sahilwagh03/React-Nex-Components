@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Alert from "./components/Alert/Alert";
+import Alert from "./components-react-nex/Alert/Alert";
 import Button from "./components/Button/Button";
 function App() {
 
@@ -17,10 +17,10 @@ function App() {
       {
         toogleAlert &&
         <Alert
-          type="success"
+          type="error"
           title="Success!"
           message="Your operation was successful."
-          position="top-right"
+          position="top-center"
         />
       }
       <Button title="Button" className={"bg-black-900"} onClick={() => setToogleAlert(!toogleAlert)}></Button>
