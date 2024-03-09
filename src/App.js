@@ -48,14 +48,8 @@ function App() {
             title="Custom Alert"
             message="This is a custom alert with a custom icon color."
             position="top-center"
-            iconColor="#FFA500"
-          />
-
-          <Alert
-            type="success"
-            title="Success!"
-            message="Your operation was successful."
-            position="bottom-center"
+            showiIcon={false}
+            alertContainerStyle=" bg-purple-100"
           />
         </>
       }

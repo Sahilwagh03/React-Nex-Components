@@ -49,7 +49,7 @@ export const getPositionClasses = (position) => {
         case 'top-center':
             return 'top-4 transform -translate-y-2'; // Center vertically
         case 'bottom-center':
-            return 'bottom-2 transform -translate-y-2'; // Center vertically
+            return 'bottom-1 transform -translate-y-1'; // Center vertically
         default:
             return 'top-left'; // Fallback to default
     }
