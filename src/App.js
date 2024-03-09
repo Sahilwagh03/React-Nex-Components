@@ -3,7 +3,7 @@ import Alert from "./components/Alert/Alert";
 import Button from "./components/Button/Button";
 function App() {
 
-  const [toogleAlert, setToogleAlert] = useState(false)
+  const [toogleAlert, setToogleAlert] = useState(true)
   return (
     <div className="flex flex-col justify-center items-center h-screen relative bg-[#F5F5F5] gap-10">
       <h1 className="text-6xl font-bold text-center relative">

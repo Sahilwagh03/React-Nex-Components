@@ -1,22 +1,19 @@
 import React from 'react';
-import {
-  generateAlertClasses,
-  generatePositionClasses
-} from 'react-nex/src/Components/Alert/alertUtils'
+import {getAlertTypeStyle,getPositionClasses} from './utils'
 import classNames from 'classnames';
 const Alert = ({
-  type = 'info', // Default alert type
+  type = 'info', 
   title,
   message,
-  titleStyle = '', // Classes for styling title
-  messageStyle = '', // Classes for styling message
-  alertContainerStyle = '', // New prop for styling the entire alert container
-  position = 'top-left', // Default position (can be adjusted)
+  titleStyle = '', 
+  messageStyle = '', 
+  alertContainerStyle = '', 
+  position = 'top-left', 
 }) => {
- 
+
   return (
     <div
-      className={classNames(generateAlertClasses(type), generatePositionClasses(position),alertContainerStyle, 'absolute')}
+      className={classNames(getAlertTypeStyle(type) ,alertContainerStyle, getPositionClasses(position) , 'absolute')}
     > {/* Apply base classes, prop style, absolute positioning, and position classes */}
       {title && <h3 className={`font-bold ${titleStyle}`}>{title}</h3>}
       <p className={`text-sm ${messageStyle}`}>{message}</p>
