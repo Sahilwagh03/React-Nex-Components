@@ -1,6 +1,9 @@
+import { useState } from "react";
 import Alert from "./components/Alert/Alert";
 import Button from "./components/Button/Button";
 function App() {
+
+  const [toogleAlert, setToogleAlert] = useState(false)
   return (
     <div className="flex flex-col justify-center items-center h-screen relative bg-[#F5F5F5] gap-10">
       <h1 className="text-6xl font-bold text-center relative">
@@ -11,13 +14,16 @@ function App() {
           alt="ReactNex Underline"
         />
       </h1>
-      <Alert
-        type="info"
-        title="Success!"
-        message="Your operation was successful."
-        position="top-right"
-      />
-      {/* <Button title="Home" className={"bg-slate-900"}></Button> */}
+      {
+        toogleAlert &&
+        <Alert
+          type="success"
+          title="Success!"
+          message="Your operation was successful."
+          position="top-right"
+        />
+      }
+      <Button title="Button" className={"bg-black-900"} onClick={() => setToogleAlert(!toogleAlert)}></Button>
     </div>
   );
 }
