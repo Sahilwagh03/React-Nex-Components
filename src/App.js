@@ -16,12 +16,48 @@ function App() {
       </h1>
       {
         toogleAlert &&
-        <Alert
-          type="warning"
-          title="Success!"
-          message="Your operation was successful."
-          position="top-center"
-        />
+        <>
+          < Alert
+            type="info"
+            title="Information"
+            message="This is an information message."
+            position="top-left"
+          />
+          <Alert
+            type="success"
+            title="Success!"
+            message="Your operation was successful."
+            position="top-right"
+          />
+
+          <Alert
+            type="error"
+            title="Error!"
+            message="An error occurred while processing your request."
+            position="bottom-left"
+          />
+
+          <Alert
+            type="warning"
+            title="Warning!"
+            message="Please proceed with caution."
+            position="bottom-right"
+          />
+          <Alert
+            type="info"
+            title="Custom Alert"
+            message="This is a custom alert with a custom icon color."
+            position="top-center"
+            iconColor="#FFA500"
+          />
+
+          <Alert
+            type="success"
+            title="Success!"
+            message="Your operation was successful."
+            position="bottom-center"
+          />
+        </>
       }
       <Button title="Button" className={"bg-black-900"} onClick={() => setToogleAlert(!toogleAlert)}></Button>
     </div>

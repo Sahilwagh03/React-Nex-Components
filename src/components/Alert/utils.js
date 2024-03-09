@@ -1,25 +1,40 @@
-let alertClasses = ` `
+import { MdErrorOutline ,MdInfoOutline ,MdCheckCircleOutline ,MdWarningAmber  } from "react-icons/md";
+export let alertClasses = '';
 
 export const getAlertTypeStyle = (type) => {
     switch (type) {
         case 'info':
             alertClasses = 'bg-blue-100 text-black ';
-            return alertClasses
+            return alertClasses;
         case 'success':
             alertClasses = 'bg-green-100 text-black ';
-            return alertClasses
+            return alertClasses;
         case 'error':
             alertClasses = 'bg-red-100 text-black ';
-            return alertClasses
+            return alertClasses;
         case 'warning':
             alertClasses = 'bg-yellow-100 text-black ';
-            return alertClasses
+            return alertClasses;
         default:
             alertClasses = 'bg-white border-1 border-[#61DAFB] ';
-            return alertClasses
+            return alertClasses;
     }
-}
+};
 
+export const getIconComponent = (type, color = '') => {
+    switch (type) {
+        case 'info':
+            return <MdInfoOutline color={color || '#000000'} className="text-2xl"/>;
+        case 'success':
+            return <MdCheckCircleOutline color={color || '#00FF00'} className="text-2xl" />;
+        case 'error':
+            return <MdErrorOutline color={color || '#FF0000'} className="text-2xl"/>;
+        case 'warning':
+            return <MdWarningAmber color={color || '#FFA500'} className="text-2xl"/>;
+        default:
+            return <MdInfoOutline color={color || '#000000'} className="text-2xl"/>;
+    }
+};
 
 export const getPositionClasses = (position) => {
     switch (position) {
@@ -34,7 +49,7 @@ export const getPositionClasses = (position) => {
         case 'top-center':
             return 'top-4 transform -translate-y-2'; // Center vertically
         case 'bottom-center':
-            return 'bottom-4 transform -translate-y-2'; // Center vertically
+            return 'bottom-2 transform -translate-y-2'; // Center vertically
         default:
             return 'top-left'; // Fallback to default
     }
