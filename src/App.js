@@ -1,4 +1,5 @@
 import Alert from "./components/Alert/Alert";
+import Button from "./components/Button/Button";
 function App() {
   return (
     <div className="flex flex-col justify-center items-center h-screen relative bg-[#F5F5F5] gap-10">
@@ -10,7 +11,13 @@ function App() {
           alt="ReactNex Underline"
         />
       </h1>
-      <Alert type="success" title="Success!" message="Your operation was successful." position="top-right"/>
+      <Alert
+        type="info"
+        title="Success!"
+        message="Your operation was successful."
+        position="top-right"
+      />
+      {/* <Button title="Home" className={"bg-slate-900"}></Button> */}
     </div>
   );
 }
