@@ -3,7 +3,7 @@ import { getAlertTypeStyle, getPositionClasses, getIconComponent } from './utils
 import classNames from 'classnames';
 
 const Alert = ({
-  type = 'info',
+  type = '',
   title,
   message,
   titleStyle = '',
@@ -17,7 +17,7 @@ const Alert = ({
   return (
     <div
       className={classNames(
-        'rounded-md px-4 py-2 shadow-md min-w-[300px]  h-auto flex items-center gap-2 flex-row',
+        'rounded-md px-4 py-2 shadow-md min-w-[300px] h-auto flex items-center gap-2 flex-row',
         getAlertTypeStyle(type),
         alertContainerStyle,
         getPositionClasses(position),

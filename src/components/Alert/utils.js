@@ -46,10 +46,10 @@ export const getPositionClasses = (position) => {
             return 'bottom-2 left-2';
         case 'bottom-right':
             return 'bottom-2 right-2';
-        case 'top-center':
-            return 'top-4 transform -translate-y-2'; 
+         case 'top-center':
+            return 'top-2 left-1/2 transform -translate-x-1/2'; // Center horizontally
         case 'bottom-center':
-            return 'bottom-1 transform -translate-y-1'; 
+            return 'bottom-2 left-1/2 transform -translate-x-1/2'; // Center horizontally
         default:
             return 'top-left';
     }

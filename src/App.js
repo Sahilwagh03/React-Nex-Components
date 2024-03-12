@@ -4,9 +4,13 @@ import Button from "./components/Button/Button";
 import gsap from 'gsap';
 import Avatar from './components/Avatar/Avatar';
 import AvatarGroup from './components/AvatarGroup/AvatarGroup';
+import Badge from './components/Badge/Badge';
+import CheckBox from './components/CheckBox/CheckBox';
+
 function App() {
 
-  const [toogleAlert, setToogleAlert] = useState(true)
+  const [toogleAlert, setToogleAlert] = useState(false)
+  const [check, setCheck] = useState(false)
   return (
     <div className="flex flex-col justify-center items-center h-screen relative bg-[#F5F5F5] gap-10">
       <div className='relative'>
@@ -44,33 +48,66 @@ function App() {
             message="Please proceed with caution."
             position="bottom-right"
           />
+
           <Alert
-            type="info"
-            title="Custom Alert"
-            message="This is a custom alert with a custom icon color."
+            type="warning"
+            title="Warning!"
+            message="Please proceed with caution."
             position="top-center"
-            showiIcon={false}
-            alertContainerStyle=" bg-purple-100"
           />
+
+          {/* <Alert
+            type="warning"
+            title="Warning!"
+            message="Please proceed with caution."
+            position="bottom-center"
+          /> */}
         </>
       }
       <Button title="Button" className={"bg-black-900"} onClick={() => setToogleAlert(!toogleAlert)}></Button>
 
-      <div className='flex flex-row gap-4'>
+      {/* <div className='flex flex-row gap-4'>
         <Avatar size={'2xl'} />
         <Avatar size={'xl'} />
         <Avatar size={'lg'} />
         <Avatar size={'md'} />
         <Avatar size={'sm'} />
         <Avatar size={'xs'} />
-      </div>
-      <AvatarGroup imageContainerStyle={'bg-red-400'}>
-        <Avatar size={'md'} src='https://bit.ly/ryan-florence' />
-        <Avatar size={'md'} src='https://bit.ly/sage-adebayo' />
-        <Avatar size={'md'} src='https://bit.ly/kent-c-dodds' />
-        <Avatar size={'md'} src='https://bit.ly/prosper-baba' />
-        <Avatar size={'md'} src='https://bit.ly/code-beast' />
+      </div> */}
+      <AvatarGroup imageContainerStyle={' bg-red-400'}>
+        <Avatar size={'sm'} src='https://bit.ly/ryan-florence' />
+        <Avatar size={'sm'} src='https://bit.ly/sage-adebayo' />
+        <Avatar size={'sm'} src='https://bit.ly/kent-c-dodds' />
+        <Avatar size={'sm'} src='https://bit.ly/prosper-baba' />
+        <Avatar size={'sm'} src='https://bit.ly/code-beast' />
       </AvatarGroup>
+
+      <div className=' flex flex-row gap-4'>
+        <Badge className="bg-blue-500">New Arrival</Badge>
+        <Badge className="bg-green-500">On Sale</Badge>
+        <Badge className="bg-yellow-500">Bestseller</Badge>
+        <Badge className="bg-red-500">Limited Edition</Badge>
+        <Badge className="bg-purple-500">Featured</Badge>
+        <Badge varient={"outline"}>Featured</Badge>
+        <Badge>Badge</Badge>
+      </div>
+      <CheckBox
+        label={'Accept terms and conditions'}
+        description="You agree to our Terms of Service and Privacy Policy."
+        isChecked={check}
+        onCheckedChange={(data) => setCheck(data)}
+      />
+      <div>
+        {
+          check &&
+          <Alert
+            type="success"
+            title="Success!"
+            message="Your operation was successful."
+            position="top-right"
+          />
+        }
+      </div>
     </div>
   );
 }
