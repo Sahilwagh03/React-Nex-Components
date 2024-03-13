@@ -1,4 +1,4 @@
-## Introduction
+# Introduction
 
 <span style="color:grey; font-weight:400">Build beautiful UIs faster! React-Nex provides curated, open-source components for seamless integration in your React projects. No npm hassle, just pick & integrate for accessible, flexible UIs.</span>
 
