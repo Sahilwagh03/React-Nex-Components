@@ -6,8 +6,8 @@ import Avatar from './components/Avatar/Avatar';
 import AvatarGroup from './components/AvatarGroup/AvatarGroup';
 import Badge from './components/Badge/Badge';
 import CheckBox from './components/CheckBox/CheckBox';
-import PinContainer from './components/PinInput/PinContainer';
-import PinBox from './components/PinInput/PinBox';
+import PinContainer from './components/PinBox/PinContainer';
+import PinBox from './components/PinBox/PinBox';
 
 function App() {
 
