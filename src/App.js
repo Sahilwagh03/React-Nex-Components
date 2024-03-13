@@ -13,6 +13,16 @@ function App() {
 
   const [toogleAlert, setToogleAlert] = useState(false)
   const [check, setCheck] = useState(false)
+
+
+  // Define state to hold the OTP value
+  const [otp, setOtp] = useState('');
+
+  // Function to update the OTP value
+  const handleOtpChange = (newOtp) => {
+    setOtp(newOtp);
+  };
+
   return (
     <div className="flex flex-col justify-center items-center relative bg-[#F5F5F5] gap-10">
       <div className='relative'>
@@ -111,13 +121,17 @@ function App() {
         }
       </div>
       <PinContainer>
-        <PinBox size='sm' outline='#6477cc'/>
+        <PinBox size='sm' outline='#6477cc'
+          otpValue={otp}
+          onOtpChange={handleOtpChange}
+        />
+        <h1>{otp}</h1>
       </PinContainer>
       <PinContainer>
-        <PinBox size='md'/>
+        <PinBox size='md' />
       </PinContainer>
       <PinContainer>
-        <PinBox size='lg'/>
+        <PinBox size='lg' />
       </PinContainer>
     </div>
   );

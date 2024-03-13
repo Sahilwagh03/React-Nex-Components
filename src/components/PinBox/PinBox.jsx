@@ -1,9 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { getSizeClasses } from './utils';
 import classNames from 'classnames';
 
-const PinBox = ({ length = 6, className = '', size = 'md', outline = '', placeholder = 'o' }) => {
+const PinBox = ({ length = 6, className = '', size = 'md', outline = '', placeholder = 'o', otpValue, onOtpChange }) => {
   const [pins, setPins] = useState(Array(length).fill(''));
+
+  useEffect(() => {
+    // Update the parent component with the OTP value whenever it changes
+    if (onOtpChange) {
+      onOtpChange(pins.join(''));
+    }
+  }, [pins, onOtpChange]);
 
   const handleChange = (event, index) => {
     const newPins = [...pins];
@@ -44,6 +51,7 @@ const PinBox = ({ length = 6, className = '', size = 'md', outline = '', placeho
       }
     }
   };
+
   const sizeClass = getSizeClasses(size);
   return (
     <>
