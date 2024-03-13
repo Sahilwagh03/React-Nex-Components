@@ -6,13 +6,15 @@ import Avatar from './components/Avatar/Avatar';
 import AvatarGroup from './components/AvatarGroup/AvatarGroup';
 import Badge from './components/Badge/Badge';
 import CheckBox from './components/CheckBox/CheckBox';
+import PinContainer from './components/PinInput/PinContainer';
+import PinBox from './components/PinInput/PinBox';
 
 function App() {
 
   const [toogleAlert, setToogleAlert] = useState(false)
   const [check, setCheck] = useState(false)
   return (
-    <div className="flex flex-col justify-center items-center h-screen relative bg-[#F5F5F5] gap-10">
+    <div className="flex flex-col justify-center items-center relative bg-[#F5F5F5] gap-10">
       <div className='relative'>
         <h1 className="text-6xl font-bold text-center relative">
           Welcome to the React<span className="text-[#61DAFB]">Nex</span>
@@ -108,6 +110,15 @@ function App() {
           />
         }
       </div>
+      <PinContainer>
+        <PinBox size='sm' outline='#6477cc'/>
+      </PinContainer>
+      <PinContainer>
+        <PinBox size='md'/>
+      </PinContainer>
+      <PinContainer>
+        <PinBox size='lg'/>
+      </PinContainer>
     </div>
   );
 }
