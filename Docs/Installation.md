@@ -1,3 +1,5 @@
+# Installation ✨
+
 Unlike other bloated libraries, React-nex empowers you to pick and choose the exact components you require. Simply leverage npx to install specific components directly into your project:
 
 You can install React-nex components via npm using `npx`:
