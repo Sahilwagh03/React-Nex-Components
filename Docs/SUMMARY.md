@@ -1,4 +1,4 @@
 # Table of Contents
 
 - [Introduction](README.md)
-- [Installation](installation.md)
+- [Installation](✨ Installation.md)
