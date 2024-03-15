@@ -9,6 +9,7 @@ import CheckBox from './components/CheckBox/CheckBox';
 import PinContainer from './components/PinBox/PinContainer';
 import PinBox from './components/PinBox/PinBox';
 
+import { Card, CardHeader, CardTitle, CardDescription, CardBody, CardFooter } from './components/Card/CardComponets';
 function App() {
 
   const [toogleAlert, setToogleAlert] = useState(false)
@@ -24,7 +25,7 @@ function App() {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center relative bg-[#F5F5F5] gap-10">
+    <div className="flex flex-col justify-center items-center relative bg-[#F5F5F5] gap-10 py-4">
       <div className='relative'>
         <h1 className="text-6xl font-bold text-center relative">
           Welcome to the React<span className="text-[#61DAFB]">Nex</span>
@@ -76,7 +77,7 @@ function App() {
           /> */}
         </>
       }
-      <Button title="Button" className={"bg-black-900"} onClick={() => setToogleAlert(!toogleAlert)}></Button>
+      <Button title="Button" className={"bg-black-900 w-fit"} onClick={() => setToogleAlert(!toogleAlert)}></Button>
 
       {/* <div className='flex flex-row gap-4'>
         <Avatar size={'2xl'} />
@@ -133,6 +134,25 @@ function App() {
       <PinContainer>
         <PinBox size='lg' />
       </PinContainer>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Complex Card Title</CardTitle>
+        </CardHeader>
+        <CardBody>
+          <Avatar size={'sm'} src='https://bit.ly/code-beast' />
+          <Badge className="bg-yellow-500">Bestseller</Badge>
+          <CheckBox
+            label={'Accept terms and conditions'}
+            description="You agree to our Terms of Service and Privacy Policy."
+            isChecked={check}
+            onCheckedChange={(data) => setCheck(data)}
+          />
+        </CardBody>
+        <CardFooter>
+          <Button title="Button" className={"bg-black-900"} />
+        </CardFooter>
+      </Card>
     </div>
   );
 }
