@@ -6,10 +6,10 @@ import Avatar from './components/Avatar/Avatar';
 import AvatarGroup from './components/AvatarGroup/AvatarGroup';
 import Badge from './components/Badge/Badge';
 import CheckBox from './components/CheckBox/CheckBox';
-import PinContainer from './components/PinBox/PinContainer';
-import PinBox from './components/PinBox/PinBox';
-
 import { Card, CardHeader, CardTitle, CardDescription, CardBody, CardFooter } from './components/Card/CardComponets';
+import InputOtpContainer from './components/Input OTP/InputOtpContainer';
+import InputOtpBox from './components/Input OTP/InputOtpBox';
+
 function App() {
 
   const [toogleAlert, setToogleAlert] = useState(false)
@@ -121,19 +121,19 @@ function App() {
           />
         }
       </div>
-      <PinContainer>
-        <PinBox size='sm' outline='#6477cc'
+      <InputOtpContainer>
+        <InputOtpBox size='sm' outline='#6477cc'
           otpValue={otp}
           onOtpChange={handleOtpChange}
         />
         <h1>{otp}</h1>
-      </PinContainer>
-      <PinContainer>
-        <PinBox size='md' />
-      </PinContainer>
-      <PinContainer>
-        <PinBox size='lg' />
-      </PinContainer>
+      </InputOtpContainer>
+      <InputOtpContainer>
+        <InputOtpBox size='md' />
+      </InputOtpContainer>
+      <InputOtpContainer>
+        <InputOtpBox size='lg' />
+      </InputOtpContainer>
 
       <Card>
         <CardHeader>
@@ -150,7 +150,7 @@ function App() {
           />
         </CardBody>
         <CardFooter>
-          <Button title="Button" className={"bg-black-900"} />
+          <Button title="Button" className={"bg-black-900 w-full"} />
         </CardFooter>
       </Card>
     </div>
