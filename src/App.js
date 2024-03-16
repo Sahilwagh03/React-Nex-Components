@@ -77,7 +77,7 @@ function App() {
           /> */}
         </>
       }
-      <Button title="Button" className={"bg-black-900 w-fit"} onClick={() => setToogleAlert(!toogleAlert)}></Button>
+      <Button title="Button" className={"bg-black-900"} onClick={() => setToogleAlert(!toogleAlert)}></Button>
 
       {/* <div className='flex flex-row gap-4'>
         <Avatar size={'2xl'} />
@@ -141,7 +141,7 @@ function App() {
         </CardHeader>
         <CardBody>
           <Avatar size={'sm'} src='https://bit.ly/code-beast' />
-          <Badge className="bg-yellow-500">Bestseller</Badge>
+          <Badge className="bg-yellow-500 w-full">Bestseller</Badge>
           <CheckBox
             label={'Accept terms and conditions'}
             description="You agree to our Terms of Service and Privacy Policy."
