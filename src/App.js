@@ -9,6 +9,8 @@ import CheckBox from './components/CheckBox/CheckBox';
 import { Card, CardHeader, CardTitle, CardDescription, CardBody, CardFooter } from './components/Card/CardComponets';
 import InputOtpContainer from './components/Input OTP/InputOtpContainer';
 import InputOtpBox from './components/Input OTP/InputOtpBox';
+import ProgressBar from './components/ProgressBar/ProgressBar';
+import Pagination from './components/Pagination/Pagination';
 
 function App() {
 
@@ -141,7 +143,7 @@ function App() {
         </CardHeader>
         <CardBody>
           <Avatar size={'sm'} src='https://bit.ly/code-beast' />
-          <Badge className="bg-yellow-500 w-full">Bestseller</Badge>
+          <Badge className="bg-yellow-500">Bestseller</Badge>
           <CheckBox
             label={'Accept terms and conditions'}
             description="You agree to our Terms of Service and Privacy Policy."
@@ -153,6 +155,10 @@ function App() {
           <Button title="Button" className={"bg-black-900 w-full"} />
         </CardFooter>
       </Card>
+
+      <ProgressBar value={60} activeColor='#000'className='w-[300px]'/>
+
+      <Pagination totalItems={5}/>
     </div>
   );
 }
