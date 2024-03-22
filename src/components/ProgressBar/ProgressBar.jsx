@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 
-const ProgressBar = ({ value, activeColor = "blue", inActiveColor = "#18181b33", className = "", animationDuration = 1 }) => {
+const ProgressBar = ({ value, activeColor = "black", inActiveColor = "#18181b33", className = "", animationDuration = 1 }) => {
   const controls = useAnimation();
 
   // Whenever the progress prop changes, animate the progress bar

@@ -11,13 +11,17 @@ import InputOtpContainer from './components/Input OTP/InputOtpContainer';
 import InputOtpBox from './components/Input OTP/InputOtpBox';
 import ProgressBar from './components/ProgressBar/ProgressBar';
 import Pagination from './components/Pagination/Pagination';
+import Skeleton from './components/Skeleton/Skeleton';
+import Input from './components/Input/Input';
+import SearchBar from './components/SearchBar/SearchBar';
+import SearchWithSelect from './components/SearchWithSelect/SearchWithSelect';
 
 function App() {
 
   const [toogleAlert, setToogleAlert] = useState(false)
   const [check, setCheck] = useState(false)
-
-
+  const [pageNo, setPageNo] = useState(1)
+  const [data, setData] = useState([])
   // Define state to hold the OTP value
   const [otp, setOtp] = useState('');
 
@@ -26,6 +30,21 @@ function App() {
     setOtp(newOtp);
   };
 
+  const [respData, setRespData] = useState([])
+  const [selectedOptions, setSelectedOption] = useState([])
+
+  const fetchUsers = (searchValue) => {
+
+    fetch(`https://dummyjson.com/users/search?q=${searchValue}`)
+      .then((res) => res.json())
+      .then((data) => setRespData(data))
+      .catch((err) => {
+        console.error(err);
+      });
+  };
+  useEffect(() => {
+    fetchUsers("");
+  }, []);
   return (
     <div className="flex flex-col justify-center items-center relative bg-[#F5F5F5] gap-10 py-4">
       <div className='relative'>
@@ -156,9 +175,34 @@ function App() {
         </CardFooter>
       </Card>
 
-      <ProgressBar value={60} activeColor='#000'className='w-[300px]'/>
+      <ProgressBar value={60} activeColor='#6674cc' className='w-[300px]' />
+      {/* 
+      <div className='flex flex-wrap flex-row'>
+        {
+          data.slice(pageNo*10-10,pageNo*10).map((d) => (
+            <div>
+              <img src={d.thumbnail} className='w-[100px] h-[100px]' />
+            </div>
+          ))
+        }
+      </div> */}
 
-      <Pagination totalItems={5}/>
+      <Pagination totalItems={data.length} max={10} onPageChange={(pageNo) => setPageNo(pageNo)} />
+
+      <Skeleton className='w-12 h-12 rounded-full' />
+
+      <Input className='w-[300px] h-9 rounded-md' />
+
+      <SearchBar className={'rounded-full'} />
+
+      <SearchBar className={'rounded-full'} />
+
+
+      <SearchWithSelect
+        defalutOptions={respData}
+        value={selectedOptions}
+        
+      />
     </div>
   );
 }
