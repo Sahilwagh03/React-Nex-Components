@@ -193,7 +193,9 @@ function App() {
 
       <Input className='w-[300px] h-9 rounded-md' />
 
-      <SearchBar className={'rounded-full'} />
+      <SearchBar className={'rounded-sm'} />
+
+      <SearchBar className={'rounded-md'} />
 
       <SearchBar className={'rounded-full'} />
 

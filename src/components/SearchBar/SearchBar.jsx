@@ -4,7 +4,7 @@ import { RiSearchLine } from 'react-icons/ri';
 import classNames from 'classnames';
 import getPadding from './utils';
 
-const SearchBar = ({ onChange, className, animated ,IconColor }) => {
+const SearchBar = ({ onChange, className, animated, IconColor }) => {
     const [searchQuery, setSearchQuery] = useState('');
     const [isExpanded, setIsExpanded] = useState(false);
 
@@ -44,23 +44,16 @@ const SearchBar = ({ onChange, className, animated ,IconColor }) => {
                 </motion.div>
             ) : */}
             {/* ( */}
-                <div className='relative'>
-                    <input
-                        type="text"
-                        value={searchQuery}
-                        onChange={handleChange}
-                        placeholder="Search..."
-                        className={`border border-gray-300 py-2 px-4 w-64 focus:outline-none focus:ring-2 ${className}`}
-                    />
-                    <div
-                        className="cursor-pointer absolute top-[25%] right-[4%]"
-                        onClick={() => setIsExpanded(!isExpanded)}
-                    >
-                        <RiSearchLine size={20} color={IconColor}/>
-                    </div>
-                </div>
+            <label className={`relative block `}>
+                <input
+                    className={`w-full bg-white placeholder:font-italitc border border-slate-300 rounded-full py-2 pl-4 pr-4 focus:outline-none focus:ring-2 dark:border-2 dark:border-[#2E2E2E] dark:bg-[#1C1C1B] ${className}`}
+                    placeholder="Search" type="text" />
+                <span className="absolute inset-y-0 right-0 flex items-center pr-3">
+                    <RiSearchLine size={20} className='fill-black dark:fill-white' />
+                </span>
+            </label>
             {/* ) */}
-        {/* } */}
+            {/* } */}
         </>
     );
 };

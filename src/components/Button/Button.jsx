@@ -8,7 +8,7 @@ const Button = ({
 
   return (
     <button
-      className={`h-auto bg-black text-white rounded-md px-[1rem] py-[0.5rem] shadow-md  ${className!="" ? className : 'dark:text-black dark:bg-white'}`}
+      className={`h-auto bg-black text-white rounded-md px-[1rem] py-[0.5rem] shadow-md dark:text-black dark:bg-white ${className}`}
       onClick={onClick}
     >
       {title}
