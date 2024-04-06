@@ -46,7 +46,7 @@ const SearchBar = ({ onChange, className, animated, IconColor }) => {
             {/* ( */}
             <label className={`relative block `}>
                 <input
-                    className={`w-full bg-white placeholder:font-italitc border border-slate-300 rounded-full py-2 pl-4 pr-4 focus:outline-none focus:ring-2 dark:border-2 dark:border-[#2E2E2E] dark:bg-[#1C1C1B] ${className}`}
+                    className={`w-full bg-white placeholder:font-italitc border border-slate-300 rounded-full py-2 pl-4 pr-4 focus:outline-none focus:ring-1 dark:border-2 dark:border-[#2E2E2E] dark:bg-[#1C1C1B] dark:text-white ${className}`}
                     placeholder="Search" type="text" />
                 <span className="absolute inset-y-0 right-0 flex items-center pr-3">
                     <RiSearchLine size={20} className='fill-black dark:fill-white' />

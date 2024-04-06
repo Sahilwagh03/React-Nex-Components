@@ -32,9 +32,9 @@ const Pagination = ({ totalItems = 5, className = "", max ,onPageChange}) => {
             <button
                 onClick={handlePreviousPage}
                 disabled={currentPage === 1}
-                className="px-4 py-2 rounded-md focus:outline-none flex items-center gap-1"
+                className="px-4 py-2 rounded-md focus:outline-none flex items-center gap-1 dark:text-white"
             >
-                <FaChevronLeft /> Previous
+                <FaChevronLeft className='fill-black dark:fill-white'/> Previous
             </button>
             <div className='gap-1 flex flex-row'>
                 <PaginationItem pageCount={pageCount} currentPage={currentPage} setCurrentPage={(data) => setCurrentPage(data)} className={className} />
@@ -42,9 +42,9 @@ const Pagination = ({ totalItems = 5, className = "", max ,onPageChange}) => {
             <button
                 onClick={handleNextPage}
                 disabled={currentPage === pageCount}
-                className="px-4 py-2 rounded-md focus:outline-none flex items-center gap-1"
+                className="px-4 py-2 rounded-md focus:outline-none flex items-center gap-1 dark:text-white"
             >
-                Next <FaChevronRight />
+                Next <FaChevronRight className='fill-black dark:fill-white'/>
             </button>
         </div>
 
