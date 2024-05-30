@@ -15,6 +15,8 @@ import Skeleton from './components/Skeleton/Skeleton';
 import Input from './components/Input/Input';
 import SearchBar from './components/SearchBar/SearchBar';
 import SearchWithSelect from './components/SearchWithSelect/SearchWithSelect';
+import { Modal, ModalContent, ModalDescription, ModalFooter, ModalHeader, ModalTitle } from './components/Modal/Modal';
+import AnimationGrid from './components/AnimationGrid/AnimationGrid';
 
 function App() {
 
@@ -46,61 +48,62 @@ function App() {
     fetchUsers("");
   }, []);
   return (
-    <div className="flex flex-col justify-center items-center relative bg-[#F5F5F5] gap-10 py-4">
-      <div className='relative'>
-        <h1 className="text-6xl font-bold text-center relative">
-          Welcome to the React<span className="text-[#61DAFB]">Nex</span>
-        </h1>
-        <AnimatedSVG />
-      </div>
-      {
-        toogleAlert &&
-        <>
-          < Alert
-            type="info"
-            title="Information"
-            message="This is an information message."
-            position="top-left"
-          />
-          <Alert
-            type="success"
-            title="Success!"
-            message="Your operation was successful."
-            position="top-right"
-          />
+    <>
+      <div className="flex flex-col justify-center items-center relative bg-[#F5F5F5] gap-10 py-4">
+        <div className='relative'>
+          <h1 className="text-6xl font-bold text-center relative">
+            Welcome to the React<span className="text-[#61DAFB]">Nex</span>
+          </h1>
+          <AnimatedSVG />
+        </div>
+        {
+          toogleAlert &&
+          <>
+            < Alert
+              type="info"
+              title="Information"
+              message="This is an information message."
+              position="top-left"
+            />
+            <Alert
+              type="success"
+              title="Success!"
+              message="Your operation was successful."
+              position="top-right"
+            />
 
-          <Alert
-            type="error"
-            title="Error!"
-            message="An error occurred while processing your request."
-            position="bottom-left"
-          />
+            <Alert
+              type="error"
+              title="Error!"
+              message="An error occurred while processing your request."
+              position="bottom-left"
+            />
 
-          <Alert
-            type="warning"
-            title="Warning!"
-            message="Please proceed with caution."
-            position="bottom-right"
-          />
+            <Alert
+              type="warning"
+              title="Warning!"
+              message="Please proceed with caution."
+              position="bottom-right"
+            />
 
-          <Alert
-            type="warning"
-            title="Warning!"
-            message="Please proceed with caution."
-            position="top-center"
-          />
+            <Alert
+              type="warning"
+              title="Warning!"
+              message="Please proceed with caution."
+              position="top-center"
+            />
 
-          {/* <Alert
+            {/* <Alert
             type="warning"
             title="Warning!"
             message="Please proceed with caution."
             position="bottom-center"
           /> */}
-        </>
-      }
-      <Button title="Button" className={"bg-black-900"} onClick={() => setToogleAlert(!toogleAlert)}></Button>
+          </>
+        }
+        <Button title="Button" className={"bg-black-900"} onClick={() => setToogleAlert(!toogleAlert)}></Button>
 
-      {/* <div className='flex flex-row gap-4'>
+        {/* <div className='flex flex-row gap-4'>
         <Avatar size={'2xl'} />
         <Avatar size={'xl'} />
         <Avatar size={'lg'} />
@@ -108,75 +111,75 @@ function App() {
         <Avatar size={'sm'} />
         <Avatar size={'xs'} />
       </div> */}
-      <AvatarGroup imageContainerStyle={' bg-red-400'}>
-        <Avatar size={'sm'} src='https://bit.ly/ryan-florence' />
-        <Avatar size={'sm'} src='https://bit.ly/sage-adebayo' />
-        <Avatar size={'sm'} src='https://bit.ly/kent-c-dodds' />
-        <Avatar size={'sm'} src='https://bit.ly/prosper-baba' />
-        <Avatar size={'sm'} src='https://bit.ly/code-beast' />
-      </AvatarGroup>
-
-      <div className=' flex flex-row gap-4'>
-        <Badge className="bg-blue-500">New Arrival</Badge>
-        <Badge className="bg-green-500">On Sale</Badge>
-        <Badge className="bg-yellow-500">Bestseller</Badge>
-        <Badge className="bg-red-500">Limited Edition</Badge>
-        <Badge className="bg-purple-500">Featured</Badge>
-        <Badge varient={"outline"}>Featured</Badge>
-        <Badge>Badge</Badge>
-      </div>
-      <CheckBox
-        label={'Accept terms and conditions'}
-        description="You agree to our Terms of Service and Privacy Policy."
-        isChecked={check}
-        onCheckedChange={(data) => setCheck(data)}
-      />
-      <div>
-        {
-          check &&
-          <Alert
-            type="success"
-            title="Success!"
-            message="Your operation was successful."
-            position="top-right"
-          />
-        }
-      </div>
-      <InputOtpContainer>
-        <InputOtpBox size='sm' outline='#6477cc'
-          otpValue={otp}
-          onOtpChange={handleOtpChange}
-        />
-        <h1>{otp}</h1>
-      </InputOtpContainer>
-      <InputOtpContainer>
-        <InputOtpBox size='md' />
-      </InputOtpContainer>
-      <InputOtpContainer>
-        <InputOtpBox size='lg' />
-      </InputOtpContainer>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Complex Card Title</CardTitle>
-        </CardHeader>
-        <CardBody>
+        <AvatarGroup imageContainerStyle={' bg-red-400'}>
+          <Avatar size={'sm'} src='https://bit.ly/ryan-florence' />
+          <Avatar size={'sm'} src='https://bit.ly/sage-adebayo' />
+          <Avatar size={'sm'} src='https://bit.ly/kent-c-dodds' />
+          <Avatar size={'sm'} src='https://bit.ly/prosper-baba' />
           <Avatar size={'sm'} src='https://bit.ly/code-beast' />
-          <Badge className="bg-yellow-500">Bestseller</Badge>
-          <CheckBox
-            label={'Accept terms and conditions'}
-            description="You agree to our Terms of Service and Privacy Policy."
-            isChecked={check}
-            onCheckedChange={(data) => setCheck(data)}
-          />
-        </CardBody>
-        <CardFooter>
-          <Button title="Button" className={"bg-black-900 w-full"} />
-        </CardFooter>
-      </Card>
+        </AvatarGroup>
 
-      <ProgressBar value={60} activeColor='#6674cc' className='w-[300px]' />
-      {/* 
+        <div className=' flex flex-wrap flex-row gap-4 md:flex-row'>
+          <Badge className="bg-blue-500">New Arrival</Badge>
+          <Badge className="bg-green-500">On Sale</Badge>
+          <Badge className="bg-yellow-500">Bestseller</Badge>
+          <Badge className="bg-red-500">Limited Edition</Badge>
+          <Badge className="bg-purple-500">Featured</Badge>
+          <Badge varient={"outline"}>Featured</Badge>
+          <Badge>Badge</Badge>
+        </div>
+        <CheckBox
+          label={'Accept terms and conditions'}
+          description="You agree to our Terms of Service and Privacy Policy."
+          isChecked={check}
+          onCheckedChange={(data) => setCheck(data)}
+        />
+        <div>
+          {
+            check &&
+            <Alert
+              type="success"
+              title="Success!"
+              message="Your operation was successful."
+              position="top-right"
+            />
+          }
+        </div>
+        <InputOtpContainer>
+          <InputOtpBox size='sm' outline='#6477cc'
+            otpValue={otp}
+            onOtpChange={handleOtpChange}
+          />
+          <h1>{otp}</h1>
+        </InputOtpContainer>
+        <InputOtpContainer>
+          <InputOtpBox size='md' />
+        </InputOtpContainer>
+        <InputOtpContainer>
+          <InputOtpBox size='lg' />
+        </InputOtpContainer>
+
+        <Card>
+          <CardHeader>
+            <CardTitle>Complex Card Title</CardTitle>
+          </CardHeader>
+          <CardBody>
+            <Avatar size={'sm'} src='https://bit.ly/code-beast' />
+            <Badge className="bg-yellow-500">Bestseller</Badge>
+            <CheckBox
+              label={'Accept terms and conditions'}
+              description="You agree to our Terms of Service and Privacy Policy."
+              isChecked={check}
+              onCheckedChange={(data) => setCheck(data)}
+            />
+          </CardBody>
+          <CardFooter>
+            <Button title="Button" className={"bg-black-900 w-full"} />
+          </CardFooter>
+        </Card>
+
+        <ProgressBar value={60} activeColor='#6674cc' className='w-[300px]' />
+        {/* 
       <div className='flex flex-wrap flex-row'>
         {
           data.slice(pageNo*10-10,pageNo*10).map((d) => (
@@ -187,25 +190,43 @@ function App() {
         }
       </div> */}
 
-      <Pagination totalItems={data.length} max={10} onPageChange={(pageNo) => setPageNo(pageNo)} />
+        <Pagination totalItems={data.length} max={10} onPageChange={(pageNo) => setPageNo(pageNo)} />
 
-      <Skeleton className='w-12 h-12 rounded-full' />
+        <Skeleton className='w-12 h-12 rounded-full' />
 
-      <Input className='w-[300px] h-9 rounded-md' />
+        <Input className='w-[300px] h-9 rounded-md' />
 
-      <SearchBar className={'rounded-sm'} />
+        <SearchBar className={'rounded-sm'} />
 
-      <SearchBar className={'rounded-md'} />
+        <SearchBar className={'rounded-md'} />
 
-      <SearchBar className={'rounded-full'} />
+        <SearchBar className={'rounded-full'} />
 
 
-      <SearchWithSelect
+        {/* <SearchWithSelect
         defalutOptions={respData}
         value={selectedOptions}
         
-      />
-    </div>
+      /> */}
+
+        {/* <Modal Open={true}>
+        <ModalContent>
+          <ModalHeader>
+            <ModalTitle>Are you absolutely sure?</ModalTitle>
+            <ModalDescription> This action cannot be undone. This will permanently delete your
+              account and remove your data from our servers.</ModalDescription>
+          </ModalHeader>
+          <ModalFooter>
+            <Button title='Close' className='bg-red-500'></Button>
+            <Button title='Continue'></Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal> */}
+
+
+      </div>
+      {/* <AnimationGrid /> */}
+    </>
   );
 }
 

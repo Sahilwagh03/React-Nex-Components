@@ -3,12 +3,12 @@ import React from 'react'
 const Button = ({
   title = "Button",
   onClick,
-  className
+  className="bg-black shadow-md text-white dark:text-black dark:bg-white"
 }) => {
 
   return (
     <button
-      className={`h-auto bg-black text-white rounded-md px-[1rem] py-[0.5rem] shadow-md dark:text-black dark:bg-white ${className}`}
+      className={`h-auto rounded-md px-4 py-2 ${className}`}
       onClick={onClick}
     >
       {title}
