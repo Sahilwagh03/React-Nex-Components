@@ -16,11 +16,12 @@ import Input from './components/Input/Input';
 import SearchBar from './components/SearchBar/SearchBar';
 import SearchWithSelect from './components/SearchWithSelect/SearchWithSelect';
 import { Modal, ModalContent, ModalDescription, ModalFooter, ModalHeader, ModalTitle } from './components/Modal/Modal';
-import AnimationGrid from './components/AnimationGrid/AnimationGrid';
+import DatePicker from './components/DatePicker/DatePicker'
 
 function App() {
 
   const [toogleAlert, setToogleAlert] = useState(false)
+  const [date, setDate] = useState('')
   const [check, setCheck] = useState(false)
   const [pageNo, setPageNo] = useState(1)
   const [data, setData] = useState([])
@@ -31,6 +32,7 @@ function App() {
   const handleOtpChange = (newOtp) => {
     setOtp(newOtp);
   };
+
 
   const [respData, setRespData] = useState([])
   const [selectedOptions, setSelectedOption] = useState([])
@@ -159,6 +161,10 @@ function App() {
           <InputOtpBox size='lg' />
         </InputOtpContainer>
 
+        <div className='h-[100vh]'>
+          <DatePicker onSelect={setDate} selected={date} />
+        </div>
+
         <Card>
           <CardHeader>
             <CardTitle>Complex Card Title</CardTitle>
@@ -225,7 +231,9 @@ function App() {
 
 
       </div>
-      {/* <AnimationGrid /> */}
+
+
+
     </>
   );
 }
