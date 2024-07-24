@@ -1,0 +1,48 @@
+name: Update Component Registry
+
+on:
+  push:
+    branches:
+      - main  # or any branch you want to trigger this action
+
+jobs:
+  update-registry:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout package repository
+      uses: actions/checkout@v2
+      with:
+        path: package  # Checkout the package repository to the 'package' directory
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'  # or any version you're using
+
+    - name: Install dependencies
+      run: |
+        cd package
+        npm install
+
+    - name: Checkout documentation repository
+      uses: actions/checkout@v2
+      with:
+        repository: sahilwagh03/React-Nex
+        path: docs  # Checkout the documentation repository to the 'docs' directory
+
+    - name: Update component-registry.json
+      run: |
+        cd package
+        npm run update-registry  # This will run the updateRegistry.js script
+
+    - name: Commit changes
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        cd docs
+        git config --local user.email "rish.tiwari745@gmail.com"
+        git config --local user.name "Invader745"
+        git add component-registry.json
+        git commit -m "Updated component registry with new components"
+        git push
